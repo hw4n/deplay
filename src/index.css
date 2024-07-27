@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .sidebar-icon {
+        @apply relative flex items-center justify-center w-12 h-12
+        mt-2 mb-2 mx-auto shadow-lg rounded-3xl bg-gray-500 text-white
+        hover:bg-gray-600 hover:text-blue-400 hover:rounded-xl transition-all duration-300;
+    }
+
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+        text-white bg-gray-800 text-sm transition-all duration-300 scale-0 origin-left;
+    }
+
+    .chat-message {
+        @apply flex flex-col justify-start p-2 m-2
+        bg-gray-500 text-gray-800 rounded-xl shadow-md break-words;
+    }
+
+    .chat-message.deleted {
+        @apply bg-red-800 text-gray-400 line-through;
+    }
+
+    .chat-message.edited {
+        @apply bg-yellow-700 text-gray-800;
+    }
+
+    .chat-message.edited .chat-message-content-history {
+        @apply line-through;
+    }
+
+    .chat-message-header {
+        @apply flex w-max items-start justify-between p-2 pt-0.5
+        text-gray-800 rounded-t-xl gap-2;
+    }
+
+    .chat-message-header img {
+        @apply w-8 h-8 rounded-full;
+    }
+
+    .chat-message-header-name {
+        @apply text-sm font-semibold;
+    }
+
+    .chat-message-header-time {
+        @apply text-xs;
+    }
+
+    .chat-message-content {
+        @apply ml-12 mt-[-20px];
+    }
+
+    .chat-message-content-history {
+        @apply text-sm;
+    }
+
+    .chat-message-content-history-wrap {
+        @apply h-max flex gap-1 ml-11;
+    }
+
+    .chat-message-content-history-wrap p {
+        @apply max-w-full;
+    }
+}
